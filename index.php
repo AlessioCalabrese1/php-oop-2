@@ -11,6 +11,9 @@
     $creditCard1 = new CreditCard("Alessio Calabrese", "1111 2222 3333 4444", "191", "300$", "06", "2023");
 
     $cart1 = new Cart($utente1, [$creditCard1]);
+    $cart1->addProduct($product1);
+    var_dump($cart1);
+    $cart1->addProduct($product3);
     var_dump($cart1);
 ?>
 
