@@ -21,4 +21,12 @@ class Cart{
         array_push($this->cartItems, $productToAdd);
         return $this->cartItems;
     }
+
+    public function getOrderPrice(){
+        $orderPrice = 0;
+        foreach ($this->cartItems as $item) {
+            $orderPrice += $item->productPrice;
+        }
+        return $orderPrice;
+    }
 }
