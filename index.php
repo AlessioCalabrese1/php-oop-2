@@ -8,12 +8,15 @@
     $product2 = new Food("lui", "Paté", 4, "2", "Umido", ["Carne"], "Per cani", "Dai 2 ai 4 anni", "20/06/2024");
     $product3 = new Bed("lui", "Cuccia per cani", 25, "3", ["Plastica, tessuto"], "45cm", "30cm", "Cuscino");
 
-    $creditCard1 = new CreditCard("Alessio Calabrese", "1111 2222 3333 4444", "191", "300$", "06", "2023");
+    $creditCard1 = new CreditCard("Alessio Calabrese", "1111 2222 3333 4444", "191", 300, "06", "2023");
 
-    $cart1 = new Cart($utente1, [$creditCard1]);
+    $cart1 = new Cart($utente1, $creditCard1);
     $cart1->addProduct($product1);
     $cart1->addProduct($product3);
+    var_dump($cart1->associatedCreditCard);
     var_dump($cart1->getOrderPrice());
+    $cart1->pay();
+    var_dump($cart1->associatedCreditCard);
 ?>
 
 

@@ -4,7 +4,7 @@ class CreditCard{
     protected $accountholder;
     protected $cardNumber;
     protected $CVS;
-    protected $balance;
+    public $balance;
     protected $expirationMonth;
     protected $expirationYear;
 

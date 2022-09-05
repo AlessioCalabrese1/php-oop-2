@@ -4,13 +4,13 @@ require_once __DIR__ . '/../inclusions.php';
 
 class Cart{
     protected $cartUser;
-    protected $associatedCreditCards = [];
+    public $associatedCreditCard;
     protected $cartItems = [];
 
-    public function __construct($_cartUser, $_associatedCreditCards)
+    public function __construct($_cartUser, $_associatedCreditCard)
     {   
         $this->cartUser = $_cartUser;
-        $this->associatedCreditCards = $_associatedCreditCards;
+        $this->associatedCreditCard = $_associatedCreditCard;
     }
 
     public function getAsociatedCreditCards(){
@@ -28,5 +28,9 @@ class Cart{
             $orderPrice += $item->productPrice;
         }
         return $orderPrice;
+    }
+
+    public function pay(){
+        $this->associatedCreditCard->balance -= $this->getOrderPrice();
     }
 }
