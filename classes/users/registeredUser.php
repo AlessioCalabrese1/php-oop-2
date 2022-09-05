@@ -4,7 +4,7 @@ require_once __DIR__ . '/user.php';
 
 class RegisteredUser extends User{
     protected $username;
-    private $password;
+    protected $password;
     protected $discount = 20;
 
     public function __construct($_firstName, $_lastName, $_shippingAddress, $_username, $_password)

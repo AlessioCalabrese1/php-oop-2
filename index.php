@@ -1,3 +1,10 @@
+<?php
+    require_once __DIR__ . '/inclusions.php';
+
+    
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
